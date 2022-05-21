@@ -4,7 +4,7 @@ import { Navigate } from "react-router-dom";
 import { CoordContext } from "../../context/CoordContext";
 import CenterMap from "../../helper/CenterMap";
 import Navbar from "../../components/Navbar/Navbar";
-import Details from "../../components/Details/Details";
+// import Details from "../../components/Details/Details";
 
 const Info = () => {
   const { coordinates } = useContext(CoordContext);
