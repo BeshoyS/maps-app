@@ -205,6 +205,7 @@ form {
   border-color: var(--main-color);
   box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.15);
   outline: none;
+  cursor: pointer;
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -245,9 +246,104 @@ form {
   right: 5%;
 }
 
+.leaflet-routing-container {
+  display: none;
+}
+
+/***Details***/
 .details {
-  width: 30%;
+  width: 40%;
   position: absolute;
-  left: 5%;
-  bottom: 5%;
+  left: 1%;
+  bottom: 3%;
+  z-index: 9;
+  background-color: #fff;
+  padding: 2rem;
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.7);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.details .errMsg {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.details h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.totalDistance {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.costInp {
+  width: 60px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.5rem 0;
+  margin: 0.6rem 0.3rem;
+  border: none;
+  border-bottom: 2px solid #828383;
+}
+
+.costInp:focus {
+  outline: none;
+}
+
+.costDetails > * {
+  margin: 0.8rem 0;
+}
+
+.costDetails span {
+  font-weight: bold;
+}
+
+.pdfBtn {
+  display: block;
+  width: 40%;
+  /* font-weight: bold; */
+  font-size: 1rem;
+  margin: 2rem auto;
+}
+
+.loading {
+  text-align: center;
+  font-size: 2rem;
+  margin: auto;
+  color: var(--main-color);
+  display: block;
+}
+
+
+
+.icon-spin {
+  -webkit-animation: icon-spin 2s infinite linear;
+  animation: icon-spin 2s infinite linear;
+}
+
+@keyframes icon-spin {
+  0% {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    -moz-transform: rotate(359deg);
+    -ms-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+  }
 }

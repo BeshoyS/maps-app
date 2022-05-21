@@ -9,6 +9,7 @@ const CenterMap = ({ coordinates }) => {
     (startLatLng[1] + endLatLng[1]) / 2,
   ];
   map.flyTo(centerArr);
+  map.fitBounds([startLatLng, endLatLng], { maxZoom: 18, padding: [100, 100] });
   return null;
 };
 

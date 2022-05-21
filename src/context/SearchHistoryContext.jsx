@@ -1,16 +1,10 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 
-const initialState = localStorage.getItem("searchHistory")
-  ? JSON.parse(localStorage.getItem("searchHistory"))
-  : [];
-export const SearchHistoryContext = createContext(initialState);
+
+export const SearchHistoryContext = createContext([]);
 
 export function SearchHistoryContextProvider({ children }) {
-  const [history, setHistory] = useState(initialState);
-
-  useEffect(() => {
-    localStorage.setItem("searchHistory", JSON.stringify(history));
-  }, [history]);
+  const [history, setHistory] = useState([]);
 
   return (
     <SearchHistoryContext.Provider value={{ history, setHistory }}>
