@@ -15,11 +15,8 @@ const Info = () => {
       <Navbar />
       {/*The only part of the page which will be downloaded as pdf */}
       <div ref={pdfRef}>
-        {/*when refreshng the page won't be coordinates so it will navigate the user to home page with search history*/}
         {coordinates ? (
-          {
-            /*The leaflet map with adding the centering and routing */
-          }(<Map coordinates={coordinates} setSummary={setSummary} />)
+          <Map coordinates={coordinates} setSummary={setSummary} />
         ) : (
           <Navigate replace to={"/"} />
         )}

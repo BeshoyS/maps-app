@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-export const CoordContext = createContext(null);
+export const CoordContext = createContext("");
 
 export function CoordContextProvider({ children }) {
   const [coordinates, setCoordinates] = useState(null);

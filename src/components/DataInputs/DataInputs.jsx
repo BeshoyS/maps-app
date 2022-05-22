@@ -37,7 +37,7 @@ const DataInputs = () => {
     }
   };
   return (
-    <section className="inputs">
+    <section className="inputs" data-testid="dataInputs">
       <h1 className="inpTitle">Enter Your Directions</h1>
       <PlacesAutoComplete
         setCood={setStartPoint}
@@ -51,7 +51,7 @@ const DataInputs = () => {
       />
       <Button title="Get Info" onClick={getCoord} />
       {error && (
-        <p className="errMsg">
+        <p className="errMsg" data-testid="errMsg">
           {error || "No Route avaliable for your destination"}
         </p>
       )}

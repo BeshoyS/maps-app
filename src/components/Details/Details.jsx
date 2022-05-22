@@ -10,8 +10,8 @@ const Details = ({ summary, pdfRef }) => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    totalDistance ? setLoading(false) : setLoading(true);
-  }, [totalDistance]);
+    summary ? setLoading(false) : setLoading(true);
+  }, [summary]);
 
   return (
     <div className="details">
@@ -72,7 +72,7 @@ const Details = ({ summary, pdfRef }) => {
           </Pdf>
         </>
       ) : (
-        <h3 className="errMsg">No Route avaliable for your destination</h3>
+        <h3 className="errMsg" data-testid="errMsg">No Route avaliable for your destination</h3>
       )}
     </div>
   );

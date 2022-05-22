@@ -54,6 +54,7 @@ const PlacesAutoComplete = ({ setCood, placeholder, setError }) => {
         disabled={!ready}
         className="input"
         placeholder={placeholder}
+        data-testid="placesInput"
         required
       />
       {status === "OK" && (
