@@ -38,7 +38,7 @@ const Details = ({ summary, pdfRef }) => {
               Km/day
             </p>
             <p>
-              Cost per hour: $
+              Cost per Km: $
               <input
                 type="number"
                 inputMode="decimal"
@@ -47,7 +47,7 @@ const Details = ({ summary, pdfRef }) => {
                 className="costInp"
                 onChange={(e) => setRate(e.target.value)}
               />
-              /h
+              /Km
             </p>
           </div>
           <div className="costDetails">
