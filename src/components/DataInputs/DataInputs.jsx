@@ -29,8 +29,7 @@ const DataInputs = () => {
   }, [startPoint, endPoint, setCoordinates]);
 
   const getCoord = () => {
-    if (error === "") {
-      setError("");
+    if (!error) {
       setHistory((prev) => [...prev, coordinates]);
       // setCoordinates(fullCoord);
       navigate("/info");
@@ -52,7 +51,7 @@ const DataInputs = () => {
       <Button title="Get Info" onClick={getCoord} />
       {error && (
         <p className="errMsg" data-testid="errMsg">
-          {error || "No Route avaliable for your destination"}
+          "No Route avaliable for your destination"
         </p>
       )}
     </section>

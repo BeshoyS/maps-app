@@ -7,7 +7,7 @@ const Navbar = () => {
   const {setError} = useContext(CoordContext)
   return (
     <header className="navbar">
-      <Link to={'/'} className="backBtn" onClick={()=> setError('')}>
+      <Link to={'/'} className="backBtn" onClick={()=> setError(false)}>
       <FaArrowLeft/>
       </Link>
     </header>

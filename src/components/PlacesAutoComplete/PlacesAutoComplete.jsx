@@ -28,7 +28,7 @@ const PlacesAutoComplete = ({ setCood, placeholder, setError }) => {
           const { lat, lng } = getLatLng(results[0]);
           setCood((prev) => ({ ...prev, name: description, lat, lng }));
         } catch (error) {
-          setError(error.message);
+          setError(true);
         }
       });
     };

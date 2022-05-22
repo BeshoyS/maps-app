@@ -4,7 +4,7 @@ export const CoordContext = createContext("");
 
 export function CoordContextProvider({ children }) {
   const [coordinates, setCoordinates] = useState(null);
-  const [error, setError] = useState("");
+  const [error, setError] = useState(false);
 
   return (
     <CoordContext.Provider
