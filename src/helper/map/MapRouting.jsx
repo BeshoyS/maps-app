@@ -33,7 +33,6 @@ const MapRouting = ({ setSummary }) => {
       })
       .addTo(map)
       .on("routingerror", function (e) {
-        console.log(e);
         e.error.status === "NoRoute"
           ? setError("No Route Avaliable By Car, Try A diffrenet destination")
           : setError("");

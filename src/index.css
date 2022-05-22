@@ -1,15 +1,26 @@
+/* Global Vars and Imports */
+/* Google fonts */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
 :root {
+  --font-family: "Roboto", sans-serif;
   --main-color: #64ba9e;
   --hover-color: #44a887;
-  --text-color: #000;
-  --font-family: "Roboto", sans-serif;
+  --text-color: #212529;
+  --bg-overlay-gradient: rgba(255, 255, 255, 0.7);
+  --back-btn-color: #fff;
+  --light-shadow: rgba(201, 201, 201, 0.7);
+  --dark-shadow: rgba(0, 0, 0, 0.15);
+  --border-color: #ced4da;
+  --search-history-bg: rgba(100, 186, 158, 0.565);
 }
 
+/* Global Styling */
 * {
   box-sizing: border-box;
   margin: 0;
 }
+
 html {
   font-family: var(--font-family);
 }
@@ -23,32 +34,13 @@ a {
   color: var(--text-color);
 }
 
-a:hover {
-  text-decoration: underline;
+::-webkit-scrollbar {
+  display: none;
 }
 
-/***Navbar***/
-.navbar {
-  position: absolute;
-  top: 5%;
-  left: 1%;
-  z-index: 3;
-}
-
-.backBtn {
-  color: #fff;
-  background-color: var(--main-color);
-  padding: 1rem;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-}
-
+/***Components***/
 /***Home***/
 .home {
-  /* padding: 2rem; */
   height: 100vh;
   display: flex;
   align-items: center;
@@ -56,8 +48,8 @@ a:hover {
   text-align: center;
   background: linear-gradient(
       0deg,
-      rgba(255, 255, 255, 0.9),
-      rgba(255, 255, 255, 0.9)
+      var(--bg-overlay-gradient),
+      var(--bg-overlay-gradient)
     ),
     url("./images/112642-OOIM8W-880.jpg");
   background-position: center;
@@ -75,9 +67,9 @@ a:hover {
   gap: 3rem;
   height: 100%;
   padding: 1rem 0;
-  background-color: #64ba9e90;
-  border-right: 1px solid #ced4da;
-  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.7);
+  background-color: var(--search-history-bg);
+  border-right: 1px solid var(--border-color);
+  box-shadow: 2px 4px 10px 1px var(--light-shadow);
 }
 
 .search-history .btn {
@@ -89,18 +81,13 @@ a:hover {
   height: 500px;
   padding: 1rem 0;
   overflow-y: scroll;
-  box-shadow: inset 0px 11px 8px -10px rgba(0, 0, 0, 0.15),
-    inset 0px -11px 8px -10px rgba(0, 0, 0, 0.15);
-}
-
-::-webkit-scrollbar {
-  display: none;
+  box-shadow: inset 0px -11px 8px -10px var(--dark-shadow);
 }
 
 .searchItem {
   width: 95%;
-  border: 1px solid #ced4da;
-  background-color: #ffffff80;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-overlay-gradient);
   padding: 1rem;
   text-align: left;
   margin: auto;
@@ -117,6 +104,7 @@ a:hover {
   -ms-transition: all 0.3s;
   -o-transition: all 0.3s;
 }
+
 .searchItem:hover {
   transform: scale(1.02);
   -webkit-transform: scale(1.02);
@@ -144,13 +132,7 @@ a:hover {
   margin-bottom: 1rem;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1rem;
-}
-
+/***PlacesAutoComplete***/
 .inputDiv {
   position: relative;
   width: 60%;
@@ -162,9 +144,8 @@ form {
   padding: 0.5rem 1rem;
   font-size: 1rem;
   line-height: 1.5;
-  color: #212529;
-  background-color: #fff;
-  border: 1px solid #ced4da;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -174,8 +155,8 @@ form {
 
 .autoSuggest {
   position: absolute;
-  border: 1px solid #ced4da;
-  background-color: #fff;
+  border: 1px solid var(--border-color);
+  background-color: var(--back-btn-color);
   width: 100%;
   margin: auto;
   padding: 0;
@@ -187,6 +168,7 @@ form {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
 }
+
 .autoSuggest li {
   font-size: 0.9rem;
   padding: 1rem;
@@ -196,6 +178,7 @@ form {
   text-overflow: ellipsis;
 }
 
+/***Button***/
 .btn {
   font-size: 0.9rem;
   width: 100px;
@@ -223,6 +206,7 @@ form {
   border-color: var(--hover-color);
 }
 
+/***Error Message***/
 .errMsg {
   margin: 1rem auto;
   color: #e42a2a;
@@ -230,10 +214,31 @@ form {
 }
 
 /***Map & Info***/
+/***Navbar***/
+.navbar {
+  position: absolute;
+  top: 5%;
+  left: 1%;
+  z-index: 3;
+}
+
+.backBtn {
+  color: var(--back-btn-color);
+  background-color: var(--main-color);
+  padding: 1rem;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+/***Info***/
 .info {
   position: relative;
 }
 
+/***Map***/
 .mapContainer {
   width: 100vw;
   height: 100vh;
@@ -252,24 +257,19 @@ form {
 
 /***Details***/
 .details {
-  width: 40%;
+  width: 28.125rem;
   position: absolute;
   left: 1%;
   bottom: 3%;
   z-index: 9;
-  background-color: #fff;
+  background-color: var(--back-btn-color);
   padding: 2rem;
-  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.7);
+  box-shadow: 2px 4px 10px 1px var(--light-shadow);
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-}
-
-.details .errMsg {
-  font-size: 1.5rem;
-  text-align: center;
 }
 
 .details h2 {
@@ -308,14 +308,21 @@ form {
   font-weight: bold;
 }
 
+/***Error Msg***/
+.details .errMsg {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/***Download Bdf Btn***/
 .pdfBtn {
   display: block;
-  width: 40%;
-  /* font-weight: bold; */
+  width: 9.375rem;
   font-size: 1rem;
   margin: 2rem auto;
 }
 
+/***Loading Icon***/
 .loading {
   text-align: center;
   font-size: 2rem;
@@ -324,13 +331,12 @@ form {
   display: block;
 }
 
-
-
 .icon-spin {
   -webkit-animation: icon-spin 2s infinite linear;
   animation: icon-spin 2s infinite linear;
 }
 
+/***Spinning KeyFrame***/
 @keyframes icon-spin {
   0% {
     transform: rotate(0deg);

@@ -27,7 +27,6 @@ const PlacesAutoComplete = ({ setCood, placeholder, setError }) => {
         try {
           const { lat, lng } = getLatLng(results[0]);
           setCood((prev) => ({ ...prev, name: description, lat, lng }));
-          //   console.log("📍 Coordinates: ", { lat, lng });
         } catch (error) {
           setError(error.message);
         }

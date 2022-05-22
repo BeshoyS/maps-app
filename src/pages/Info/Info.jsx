@@ -15,7 +15,10 @@ const Info = () => {
   return (
     <main className="info">
       <Navbar />
+      {/*The only part of the page which will be downloaded */}
       <div ref={pdfRef}>
+        {/*The leaflet map with adding the centering and routing */}
+        {/*when refreshng the page won't be coordinates so it will navigate the user to home page with search history*/}
         {coordinates ? (
           <MapContainer
             className="mapContainer"

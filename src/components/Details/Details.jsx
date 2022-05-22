@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaSpinner } from "react-icons/fa";
 import Pdf from "react-to-pdf";
+import Button from "../Button/Button";
 
 const Details = ({ summary, pdfRef }) => {
   const { totalDistance } = summary;
@@ -59,15 +60,14 @@ const Details = ({ summary, pdfRef }) => {
               <span>{Math.ceil(totalDistance / 1000 / drivingHours)} days</span>
             </p>
           </div>
+          {/*Download the page as a pdf*/}
           <Pdf
             targetRef={pdfRef}
             filename="download.pdf"
             options={{ orientation: "landscape" }}
           >
             {({ toPdf }) => (
-              <button className="btn pdfBtn" onClick={toPdf}>
-                Download bdf
-              </button>
+              <Button title="Download bdf" onClick={toPdf} customStyle="pdfBtn" />
             )}
           </Pdf>
         </>
